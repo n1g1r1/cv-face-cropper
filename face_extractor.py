@@ -73,5 +73,3 @@ def build_training_set():
     # End procedures.
     print('<face_extractor.py> Ending process. ' + str(iterator) + ' images are created and saved into ' + new_path_str + '.')
     camera.release()
-
-build_training_set()
