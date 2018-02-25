@@ -58,7 +58,7 @@ def build_training_set():
             face_image = camera_image[faces[0][1]:faces[0][1]+faces[0][3], faces[0][0]:faces[0][0]+faces[0][2]]
 
             # Write the image.
-            filename = name + str(iterator) + '.png'
+            filename = name + str(iterator) + '.jpg'
             print('<face_extractor.py> Save image: ' + filename)
             cv.imwrite(new_path_str + '/' + filename, face_image)
 
