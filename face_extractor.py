@@ -23,12 +23,10 @@ import os
 import cv2 as cv
 import time
 
-def face_extractor():
+def build_training_set():
 
     # Pretrained haar cascade classifiers.
-    face_cascade = cv.CascadeClassifier('data/cascades/haarcascade_frontalface_default.xml')
-
-    print('<recorder.py> More than one face detected. Are you sitting alone in front of your camera?')
+    face_cascade = cv.CascadeClassifier(os.path.dirname(__file__) + 'data/cascades/haarcascade_frontalface_default.xml')
 
     # Ask for users name
     name = input("<face_extractor.py> How is your name?\n")
@@ -75,4 +73,5 @@ def face_extractor():
     # End procedures.
     print('<face_extractor.py> Ending process. ' + str(iterator) + ' images are created and saved into ' + new_path_str + '.')
     camera.release()
-face_extractor()
+
+build_training_set()
