@@ -7,5 +7,5 @@ Crops faces out of the webcam image and saves them into a directory as training 
 3. Saves a bunch of images into that folder. Advanced way: Saves keypoints into that folder.
 
 ## Knowm challenges:
-[x] Record images
-[ ] Replace face extractor with keypoint extractor.
+- [x] Record images
+- [ ] Replace face extractor with keypoint extractor.
