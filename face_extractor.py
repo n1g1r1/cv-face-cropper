@@ -26,7 +26,7 @@ import time
 def build_training_set():
 
     # Pretrained haar cascade classifiers.
-    face_cascade = cv.CascadeClassifier(os.path.dirname(__file__) + 'data/cascades/haarcascade_frontalface_default.xml')
+    face_cascade = cv.CascadeClassifier(os.path.dirname(__file__) + '/data/cascades/haarcascade_frontalface_default.xml')
 
     # Ask for users name
     name = input("<face_extractor.py> How is your name?\n")
