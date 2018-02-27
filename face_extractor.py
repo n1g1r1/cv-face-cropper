@@ -19,14 +19,14 @@
 #######################################################
 
 # IMPORTS
-import os
-import cv2 as cv
-import time
+import os               # path finding
+import cv2 as cv        # webcam image
+import time             # sleep time
 
 def build_training_set():
 
     # Pretrained haar cascade classifiers.
-    face_cascade = cv.CascadeClassifier(os.path.dirname(__file__) + '/data/cascades/haarcascade_frontalface_default.xml')
+    face_cascade = cv.CascadeClassifier(os.path.dirname(__file__) + 'data/cascades/haarcascade_frontalface_default.xml')
 
     # Ask for users name
     name = input("<face_extractor.py> How is your name?\n")
@@ -73,3 +73,6 @@ def build_training_set():
     # End procedures.
     print('<face_extractor.py> Ending process. ' + str(iterator) + ' images are created and saved into ' + new_path_str + '.')
     camera.release()
+
+# Method call. Uncomment for debugging.
+# build_training_set()
