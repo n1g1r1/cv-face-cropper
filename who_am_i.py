@@ -61,7 +61,6 @@ def build_training_set():
             print("I think you are ...")
             face_image = camera_image[faces[0][1]:faces[0][1]+faces[0][3], faces[0][0]:faces[0][0]+faces[0][2]]
             response = send_request(face_image)
-            print(response.json())
             print("... ",response.json()["label"], "probably ... ", response.json()["probability"])
             # Write the image.
             filename = name + str(iterator) + '.jpg'
