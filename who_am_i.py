@@ -77,7 +77,7 @@ def build_training_set():
     camera.release()
 
 def send_request(image_np):
-    url = "http://grapefruit.quving.com:6500/api/predict"
+    url = "http://letsfaceit.quving.com/api/predict"
     data = {}
     data["image"]= json.dumps(image_np.tolist())
     data["mode"]= "predict"
