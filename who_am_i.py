@@ -39,10 +39,7 @@ def build_training_set():
     # Make new dir if user not exists
     name = "tmp"
     new_path_str = os.getcwd() + '/data/training/' + name + '_' + str(hash(int))
-    print('<face_extractor.py> Hello ' + name + '. The algorithm will now learn to recognise your face. Please rotate it slowly to make the recognition more stable. The recording start now.')
     time.sleep(0.100)
-    print('-------------------------')
-    print('<face_extractor.py> Make new folder at ' + new_path_str)
     os.makedirs(new_path_str, exist_ok=True)
 
     # Get camera image.
@@ -78,7 +75,6 @@ def build_training_set():
         output, camera_image = camera.read()
 
     # End procedures.
-    print('<face_extractor.py> Ending process. ' + str(iterator) + ' images are created and saved into ' + new_path_str + '.')
     camera.release()
 
 def send_request(image_np):
