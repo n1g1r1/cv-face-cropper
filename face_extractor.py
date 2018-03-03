@@ -30,7 +30,7 @@ canny_upper_threshold = 200
 
 
 # Path to classifier.
-classifier_path = os.path.dirname(__file__) + 'data/cascades/haarcascade_frontalface_default.xml'
+classifier_path = os.path.join(os.path.dirname(__file__), 'data/cascades/haarcascade_frontalface_default.xml')
 
 
 def build_training_set():
