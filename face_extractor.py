@@ -28,15 +28,7 @@ path_to_trainingdata = os.getcwd() + '/data/training'
 canny_lower_threshold = 40
 canny_upper_threshold = 200
 
-
-# Path to classifier.
-classifier_path = os.path.join(os.path.dirname(__file__), 'data/cascades/haarcascade_frontalface_default.xml')
-
-
-def build_training_set():
-
-    # Pretrained haar cascade classifiers.
-    face_cascade = cv.CascadeClassifier(classifier_path)
+def build_training_set(detector):
 
     # Ask for users name.
     name = input("<face_extractor.py> How is your name?\n")
@@ -58,11 +50,8 @@ def build_training_set():
 
     while output and iterator < 50:
 
-        # Save grayscale image.
-        camera_image_gray = cv.cvtColor(camera_image, cv.COLOR_BGR2GRAY)
-
         # Get face coordinates.
-        faces = face_cascade.detectMultiScale(camera_image_gray, 1.3, 5)
+        faces, eyes, image = detector.detect_faces(camera_image, detect_eyes = False, draw_bounding_box = False)
 
         if len(faces) is 1:
 
@@ -89,17 +78,6 @@ def build_training_set():
     print('<face_extractor.py> Ending process. ' + str(iterator) + ' images are created and saved into ' + new_path_str + '.')
     cv.destroyAllWindows()
     camera.release()
-
-# Connverts an image into detected edges and returns it.
-def convert_image(image_array):
-    edges = cv.Canny(image_array,canny_lower_threshold,canny_upper_threshold)
-
-    return edges
-
-# Returns the classifier path.
-def get_classifier_path():
-    return classifier_path
-
 
 # Method call. Uncomment for debugging.
 # build_training_set()
