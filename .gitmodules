@@ -1,3 +1,0 @@
-[submodule "modules/face_detector"]
-	path = modules/face_detector
-	url = https://github.com/n1g1r1/cv-face-detector.git
