@@ -6,22 +6,13 @@
 # This script makes a directory based on an entered
 # name and a hash value and saves X faces into that
 # folder as training set for face recognition.
-#
-# Algorithm description:
-# 1) Asks for a name
-# 2) Makes new dir
-# 3) Saves a bunch of images into that folder
-#    _Advanced way: Saves keypoints into that folder.
-# 
-# Knowm challenges:
-# [x] Record images
-# [ ] Replace image face_extractor with keypoint face_extractor.
 #######################################################
 
 # IMPORTS.
 import os               # path finding
 import cv2 as cv        # webcam image
 import time             # sleep time
+import datetime
 
 # Settings.
 path_to_trainingdata = os.getcwd() + '/data/training'
@@ -62,7 +53,7 @@ def build_training_set(detector):
             cv.imshow('Face extractor', face_image)
 
             # Write the image.
-            filename = name + "_" + str(iterator) + '.jpg'
+            filename = name + "_" + str(hash(time.time())) + '.jpg'
             print('<face_extractor.py> Save image: ' + filename)
             cv.imwrite(new_path_str + '/' + filename, face_image)
 
@@ -78,6 +69,7 @@ def build_training_set(detector):
     print('<face_extractor.py> Ending process. ' + str(iterator) + ' images are created and saved into ' + new_path_str + '.')
     cv.destroyAllWindows()
     camera.release()
+
 
 # Method call. Uncomment for debugging.
 # build_training_set()

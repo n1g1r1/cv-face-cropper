@@ -5,7 +5,7 @@ Crops faces out of the webcam image and saves them into a directory to train a C
 
 1. The algorithm asks for a label (name) and 
 2. makes a new directory in `data/training/` with the scheme `NAME_HASH` which contains an unique hash value to distinguish similar or equal labels from each other. 
-3. Then it activates the webcam and makes 50 pictures every 200ms of the users face in front of it and saves them into the newly created folder with the pattern `NAME_ITERATOR.jpg`. When no face is detected, no picture will be saved.
+3. Then it activates the webcam and makes 50 pictures every 200ms of the users face in front of it and saves them into the newly created folder with the pattern `NAME_TIMEHASH.jpg`. When no face is detected, no picture will be saved.
 
 ## Requirements
 
