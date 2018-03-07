@@ -20,10 +20,11 @@ List of possible detectors:
 Import the module, as well as the detector in your file and call the method like the following:
 
 ```
-face_extractor.build_training_set(detector)
+face_extractor.build_training_set(detector, classifier = "lbp")
 ```
 
 - `detector` is the detector module you've chosen.
+- `classifier` is the chosen classifier. Default: `lbp`.
 
 ### Example
 

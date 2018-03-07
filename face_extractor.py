@@ -19,7 +19,7 @@ path_to_trainingdata = os.getcwd() + '/data/training'
 canny_lower_threshold = 40
 canny_upper_threshold = 200
 
-def build_training_set(detector):
+def build_training_set(detector, classifier = "lbp"):
 
     # Ask for users name.
     name = input("<face_extractor.py> How is your name?\n")
@@ -42,7 +42,7 @@ def build_training_set(detector):
     while output and iterator < 50:
 
         # Get face coordinates.
-        faces, eyes, image = detector.detect_faces(camera_image, detect_eyes = False, draw_bounding_boxes = False)
+        faces, eyes, image = detector.detect_faces(camera_image, detect_eyes = False, draw_bounding_boxes = False, classifier = classifier)
 
         if len(faces) is 1:
 
