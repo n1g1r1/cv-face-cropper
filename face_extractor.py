@@ -42,7 +42,7 @@ def build_training_set(detector):
     while output and iterator < 50:
 
         # Get face coordinates.
-        faces, eyes, image = detector.detect_faces(camera_image, detect_eyes = False, draw_bounding_box = False)
+        faces, eyes, image = detector.detect_faces(camera_image, detect_eyes = False, draw_bounding_boxes = False)
 
         if len(faces) is 1:
 
