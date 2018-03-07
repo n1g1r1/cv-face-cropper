@@ -62,7 +62,7 @@ def build_training_set(detector):
             cv.imshow('Face extractor', face_image)
 
             # Write the image.
-            filename = name + str(iterator) + '.jpg'
+            filename = name + "_" + str(iterator) + '.jpg'
             print('<face_extractor.py> Save image: ' + filename)
             cv.imwrite(new_path_str + '/' + filename, face_image)
 
