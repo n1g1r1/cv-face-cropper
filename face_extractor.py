@@ -94,3 +94,5 @@ def build_training_set(detector, classifier = "lbp"):
     print('Ending process. ' + str(iterator) + ' images are created and saved into ' + abs_path_to_trainingdata + ' and ' + abs_path_to_validationdata + '.')
     cv.destroyAllWindows()
     camera.release()
+
+    print('</face_extractor.py> End ____________________________________________')
